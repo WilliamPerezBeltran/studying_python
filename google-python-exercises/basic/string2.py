@@ -2,7 +2,6 @@
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
-
 # Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
@@ -15,9 +14,17 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
+
+# VERY IMPORTANT VERY IMPORTANT VERY IMPORTANT 
+#       S[:x] + S[x:] = S 
+
 def verbing(s):
-  # +++your code here+++
-  return
+  if len(s) >= 3:
+    if s[-3:] == 'ing':
+      s = s + 'ly'
+    else: s = s + 'ing'
+  return s
+  
 
 
 # E. not_bad
@@ -29,8 +36,11 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-  # +++your code here+++
-  return
+  find_not = s.find('not')
+  find_bad = s.find('bad')
+  if (find_not and find_bad != -1) and (find_not < find_bad):
+    return s.replace(s[find_not:find_bad+3],'good')
+  return s
 
 
 # F. front_back
@@ -41,9 +51,25 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+  if len(a)%2 != 0:
+    reference_halve = (len(a)/2)+1 
+    a_front = a[:reference_halve] 
+    a_back = a[reference_halve:] 
+  else:
+    reference_halve = (len(a)/2)
+    a_front = a[:reference_halve] 
+    a_back = a[reference_halve:] 
 
+  if len(b)%2 != 0:
+    reference_halve = (len(b)/2)+1 
+    b_front = b[:reference_halve] 
+    b_back = b[reference_halve:] 
+  else:
+    reference_halve = (len(b)/2)
+    b_front = b[:reference_halve] 
+    b_back = b[reference_halve:] 
+
+  return a_front + b_front + a_back + b_back  
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
