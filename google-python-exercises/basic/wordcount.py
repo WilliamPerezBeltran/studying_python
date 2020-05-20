@@ -38,6 +38,41 @@ print_words() and print_top().
 """
 
 import sys
+import pdb
+
+
+def word_count(filename):
+  f = open(filename, 'rU')
+  text_string = f.read()
+  dict_text = {} 
+
+  for text in text_string.lower().split():
+    if not text in dict_text:
+      dict_text[text] = 1
+    else:
+      dict_text[text] += 1
+
+  f.close()
+  return sorted(dict_text.items())
+
+
+def print_words(filename):
+  dict_text = word_count(filename)
+  for k,v in dict_text:
+    print k,v
+
+def last(t):
+  return t[1]
+
+def sorted_print_top(count_top_words):
+  return sorted(count_top_words, key=last, reverse=True )
+
+def print_top(filename):
+  count_top_words = word_count(filename)
+  sorted_top = sorted_print_top(count_top_words)
+
+  for k,v in sorted_top[:21]:
+    print "%s --- %d" %(k,v)
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
