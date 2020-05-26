@@ -11,12 +11,27 @@ import re
 import os
 import shutil
 import commands
+import pdb
 
-"""Copy Special exercise
+"""
+forma larga
+def primer_ejercicio_made_absolutely_path(dir):
+  list_files = os.listdir(dir)
+  new_array = []
+  for file in list_files:
+    print file
+    match = re.search(r'\w+__\w+__\.\w+',file)
+    if match:
+      new_array.append(file)
+    
 """
 
-# +++your code here+++
-# Write functions and modify main() to call them
+
+
+def primer_ejercicio_made_absolutely_path(dir):
+  list_files = os.listdir(dir)
+  matches_files = [file for file in list_files if re.search(r'\w+__\w+__\.\w+',file)]
+  for file in matches_files: print os.path.abspath('./'+file)
 
 
 
@@ -27,6 +42,7 @@ def main():
   # Make a list of command line arguments, omitting the [0] element
   # which is the script itself.
   args = sys.argv[1:]
+  # pdb.set_trace()
   if not args:
     print "usage: [--todir dir][--tozip zipfile] dir [dir ...]";
     sys.exit(1)
@@ -48,8 +64,13 @@ def main():
     print "error: must specify one or more dirs"
     sys.exit(1)
 
+  if not (todir and tozip):
+    # pdb.set_trace()
+    primer_ejercicio_made_absolutely_path(sys.argv[1]) 
+
   # +++your code here+++
   # Call your functions
+
   
 if __name__ == "__main__":
   main()
