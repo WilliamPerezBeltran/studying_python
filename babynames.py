@@ -35,20 +35,6 @@ Suggested milestones for incremental development:
  -Fix main() to use the extract_names list
 """
 
-
-# EN LA TERMINAL TOCA PONER ESTE COMANDO PARA LA RESPUESTA 
-
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-# python2 babynames.py --summaryfile baby*.html
-
-
 def Name(name):
   return name[1]
 
@@ -126,19 +112,11 @@ def main():
   summary = False
   if args[0] == '--summaryfile':
     summary = True
-    # pdb.set_trace()
     del args[0]
 
   # +++your code here+++
 
   filename = sys.argv[1]
-
-  if summary:
-    # pdb.set_trace()
-    for file in args:
-      extract_names(file)
-
-
 
 
 
