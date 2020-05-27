@@ -14,8 +14,10 @@ import sys
 import os 
 
 def List(dir):
+	# MUESTRA EL NOMBRE DE LOS ARCHIVOS DEL PATH QUE SE LE DA 
 	filenames = os.listdir(dir)
 	for filename in filenames:
+		# SIMPLEMENTE HACE UN JOIN 
 		path = os.path.join(dir, filename)
 		print path 
 		print os.path.abspath(path) ## nos muestra el path absoluto del archivo 

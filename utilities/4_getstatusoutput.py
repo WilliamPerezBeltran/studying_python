@@ -29,8 +29,8 @@ def List(dir):
 	cmd = 'ls -l ' + dir
 	(status,output) = commands.getstatusoutput(cmd)
 	print output
-	este print output lo que va hacer es simular los comando 
-	en el shell, herramienta poderosa 
+	# este print output lo que va hacer es simular los comando 
+	# en el shell, herramienta poderosa 
 
 
 
