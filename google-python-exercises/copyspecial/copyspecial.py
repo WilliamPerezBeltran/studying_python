@@ -27,13 +27,37 @@ def primer_ejercicio_made_absolutely_path(dir):
 """
 
 
+"""
+la forma de trigerlo el primer ejercicios es esta
+python2 copyspecial.py .
+y nos va mostrar el path absoluto de los nombres es especiales 
+en este caso los nombres especiales son dos 
+zz__something__.jpg
+xyz__hello__.txt
+
+
+"""
+
+"""
+python2 copyspecial.py --todir .
+
+"""
+
+
 
 def primer_ejercicio_made_absolutely_path(dir):
   list_files = os.listdir(dir)
   matches_files = [file for file in list_files if re.search(r'\w+__\w+__\.\w+',file)]
   for file in matches_files: print os.path.abspath('./'+file)
 
-
+def copiararchivo(dir):
+  list_files = os.listdir(dir)
+  matches_files = [file for file in list_files if re.search(r'\w+__\w+__\.\w+',file)]
+  os.mkdir('carpetacreadoporcomando')
+  for file in matches_files:
+    cmd = 'cp ' +file+ ' ./carpetacreadoporcomando'
+    (status,output) = commands.getstatusoutput(cmd)
+    print output
 
 def main():
   # This basic command line argument parsing code is provided.
@@ -42,7 +66,6 @@ def main():
   # Make a list of command line arguments, omitting the [0] element
   # which is the script itself.
   args = sys.argv[1:]
-  # pdb.set_trace()
   if not args:
     print "usage: [--todir dir][--tozip zipfile] dir [dir ...]";
     sys.exit(1)
@@ -53,6 +76,7 @@ def main():
   todir = ''
   if args[0] == '--todir':
     todir = args[1]
+    copiararchivo(todir)
     del args[0:2]
 
   tozip = ''
@@ -65,7 +89,6 @@ def main():
     sys.exit(1)
 
   if not (todir and tozip):
-    # pdb.set_trace()
     primer_ejercicio_made_absolutely_path(sys.argv[1]) 
 
   # +++your code here+++
