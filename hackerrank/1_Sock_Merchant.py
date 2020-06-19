@@ -40,35 +40,41 @@ Sample Output
 debe dar 3. 3 es el resultado
 """
 
+import sys
+import pdb
 
+# n => numbers of elements
+# arr => arrays of digits
 
-def william(n,ar):
+def sock_merchant(n,arr):
+	arr_booleans = [False for x in range(int(n))]
+	rta = 0
+	for x in range(int(n)):
+		for y in range(int(n)):
+			if arr[x] == arr[y] and x != y:
+				if arr_booleans[x] != True and arr_booleans[y] != True:
 
-	arr_true = [False for x in range(n)]
-	result = 0
-
-	for x in range(n):
-		for y in range(n):
-			# pdb.set_trace()
-			# print(x)
-			if ar[x] == ar[y] and x != y :
-				# pdb.set_trace()
-				if arr_true[x] != True and arr_true[y] != True:
-					arr_true[x] = True
-					arr_true[y] = True
-					result+=1
-					print("posicion x: %d, posicion y: %d"%(x,y))
-					print(arr_true)
+					arr_booleans[x] = True
+					arr_booleans[y] = True
+					rta += 1
 					break
-					# pdb.set_trace()
-			
-	print(arr_true)
+	return rta
 
-	return result
+def test(got, expected):
 
+	if got == expected:
+		prefix = 'OK'
+	else:
+		prefix = 'X'
 
+	print("%s got %s expected %s"%(prefix, repr(got), repr(expected)))
+	# pdb.set_trace()
 
+def main():
+	print('Test:')
 
+	test(sock_merchant(7,[1,2,1,2,1,3,2]),2)
+	test(sock_merchant(9,[10, 20, 20, 10, 10, 30, 50, 10, 20]),3)
 
-
-print(william(9,[10,20,20,10,10,30,50,10,20]))
+if __name__=='__main__':
+	main()
