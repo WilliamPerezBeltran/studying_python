@@ -1,3 +1,13 @@
+#!/usr/bin/python -tt
+# coding=utf-8
+
+print """ 
+In Python, functions are first-class objects. 
+This means that functions can be passed around 
+and used as arguments, just like any other object 
+(string, int, float, list, and so on). 
+"""
+
 def say_hello(name):
 	return 'hello %s'%(name)
 
@@ -13,9 +23,3 @@ print be_awesome
 print greet_bob(say_hello)
 print greet_bob(be_awesome)
 
-print """ 
-In Python, functions are first-class objects. 
-This means that functions can be passed around 
-and used as arguments, just like any other object 
-(string, int, float, list, and so on). 
-"""
