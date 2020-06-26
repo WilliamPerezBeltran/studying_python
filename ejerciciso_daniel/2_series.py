@@ -15,7 +15,7 @@ def way_one_serie(n):
 
 def main():
 	arg = sys.argv[1:]
-	print(way_one_serie(int(arg[0])))
+	print(*way_one_serie(int(arg[0])),sep=", ")
 
 if __name__=='__main__':
 	main()
