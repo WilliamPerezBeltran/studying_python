@@ -22,7 +22,7 @@ def encode_base10_to_base62(number):
 
 def main():
 	arg = sys.argv[1:]
-	print("pasar el número {} a base62 da: {}".format(arg[0],encode_base10_to_base62(int(arg[0]))   ))
+	print("pasar el número {} a base62 da: {}".format(arg[0],encode_base10_to_base62(int(arg[0]))))
 
 if __name__=='__main__':
 	main()
