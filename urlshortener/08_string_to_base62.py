@@ -29,13 +29,6 @@ def convert_decimal_to_base62(number):
 
 	return stringShortener
 
-
-
-
-
-
-	
-
 def main():
 	arg = sys.argv[1:]
 	print(string_to_base62(arg[0]))
