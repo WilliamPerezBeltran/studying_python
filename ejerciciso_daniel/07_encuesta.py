@@ -7,7 +7,7 @@ realizar y procesar una encuesta a N estudiantes en donde se les solicita nombre
 edad, sexo, cantidad de asignaturas que están cursando y carrera 
 (ingeniería civil , electronica electrinca, sistemas, industrial, 
 psicologigia, veterinaria y economia)
-Los resultados requetidos son los siguientes:
+Los resultados que debe devolver el programa son los siguientes:
 
 a) Número de hombres con menos de 18 años 
 b) Número de mujeres con 18  o mas años
