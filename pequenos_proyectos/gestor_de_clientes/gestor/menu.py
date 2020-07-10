@@ -2,6 +2,7 @@
 
 # import os
 import helpers
+import manager
 
 
 def loop():
@@ -31,6 +32,7 @@ def loop():
 
         if option == '1':
             print("Listando los clientes...\n")
+            manager.show_all()
             # TODO
         if option == '2':
             print("Mostrando un cliente...\n")

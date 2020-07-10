@@ -16,3 +16,12 @@ clients.append({'nombre':'Ana','apellido':'García','dni':'28Z'})
 
 if __name__ == '__main__':
 	print(clients)
+
+
+def show(client):
+    print(f"{client['dni']}: {client['nombre']} {client['apellido']}")
+
+
+def show_all():
+    for client in clients:
+        show(client)
