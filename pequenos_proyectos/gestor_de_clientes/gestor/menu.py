@@ -36,6 +36,7 @@ def loop():
             # TODO
         if option == '2':
             print("Mostrando un cliente...\n")
+            manager.find()
             # TODO
         if option == '3':
             print("Modificando un cliente...\n")
