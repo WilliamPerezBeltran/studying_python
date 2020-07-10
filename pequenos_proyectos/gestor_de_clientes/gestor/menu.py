@@ -40,12 +40,18 @@ def loop():
             # TODO
         if option == '3':
             print("Modificando un cliente...\n")
+            if manager.add():
+                print("Cliente añadido correctamente \n")
             # TODO
         if option == '4':
             print("Modificando un cliente...\n")
+            if manager.edit():
+                print("cliente modificado correctamente \n")
             # TODO
         if option == '5':
             print("Borrando un cliente...\n")
+            if manager.delete():
+                print("Cliente borrado correctamente\n")
             # TODO
         if option == '6':
             print("Saliendo...\n")
