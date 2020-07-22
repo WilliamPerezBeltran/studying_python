@@ -46,12 +46,13 @@ def triangulos(matriz):
 	inferior = 0
 	orientacion_rta = None
 
-	for i in range(len(matriz)):
-		for j in range(len(matriz[i])):
-			if i < j:
-				superior+=matriz[i][j]
-			elif i > j:
-				inferior+=matriz[i][j]
+	for index_i,i in enumerate(matriz):
+		for index_j, j in enumerate(matriz[index_i]):
+			if index_i < index_j:
+				superior+=matriz[index_i][index_j]
+			elif index_i > index_j:
+				inferior+=matriz[index_i][index_j]
+
 	if superior > inferior:
 		orientacion_rta = 's'
 	elif superior < inferior:
