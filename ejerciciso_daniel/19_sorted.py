@@ -14,8 +14,8 @@ def sort_laTuple():
         (35, "q"),
         (0, "l"),
     ]
-    return sorted(a,)
-    # return sorted(a,key=last)
+    # return sorted(a,)
+    return sorted(a,key=last)
 
 
 def last(item):
